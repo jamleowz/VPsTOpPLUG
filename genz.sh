@@ -1,12 +1,12 @@
 #!/bin/bash
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # System Request : Debian 9+/Ubuntu 18.04+/20+
-# Develovers » 🗽🥷🎮🧑‍💻🔫Cyberpunk🥷🧑‍💻🗽TOpPLUG
+# Develovers » 🗽🥷🎮🧑‍💻🔫Cyberpunk🥷🧑‍💻🗽dexanunz
 # Email      » tuffgamer65@gmail.com
-# telegram   » https://t.me/T_OpPLUG
-# whatsapp   » wa.me/+254112386921
+# telegram   » https://t.me/dexanunz
+# whatsapp   » wa.me/0775366028
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 🧑‍💻🏴‍☠️🥷🗽 TOpPLUG script 🧑‍💻🏴‍☠️🥷🗽
+# 🧑‍💻🏴‍☠️🥷🗽 dexanunz script 🧑‍💻🏴‍☠️🥷🗽
 
 Green="\e[92;1m"
 RED="\033[31m"
@@ -33,8 +33,8 @@ clear;clear;clear
 
   # // Banner
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "  Script : ${GRAY} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 ☁️☁️🔫☁️♾️🗽🥸🥷🧑‍💻🏴‍☠️🧑‍💻☁️☁️☁️☁️TOpPLUG INFINITE 𝐒𝐓𝐎𝐑𝐄 ${NC}"
-echo -e "  Author : ${RED}⛷️🏄🏂🖥️🐼☣️⛽🛸🧑‍💻🏴‍☠️🥷🥸🗽♾️🔫🎮☁️☁️ CyberpunkTOpPLUG ${NC}${YELLOW}${NC}"
+echo -e "  Script : ${GRAY} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 ☁️☁️🔫☁️♾️🗽🥸🥷🧑‍💻🏴‍☠️🧑‍💻☁️☁️☁️☁️dexanunz INFINITE 𝐒𝐓𝐎𝐑𝐄 ${NC}"
+echo -e "  Author : ${RED}⛷️🏄🏂🖥️🐼☣️⛽🛸🧑‍💻🏴‍☠️🥷🥸🗽♾️🔫🎮☁️☁️ Cyberpunkdexanunz ${NC}${YELLOW}${NC}"
 echo -e "  ©2024  : ${BLUE} VVIP☁️🎮🔫♾️🗽🥸🥷🏴‍☠️🧑‍💻🏂🏄⛷️☣️🐼⌨️💻🪩🌐🌊 𝐄𝐃𝐈𝐓𝐈𝐎𝐍 ${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
@@ -316,7 +316,7 @@ sts="${Error}"
 fi
 TIMES="10"
 CHATID="1766050144"
-KEY="8073057681:AAGHvjVjHHWxW22WCIdgNr6xZkZ9TOZk6pA"
+KEY="7881208783:AAHbTd8GwARTBt_1HzsRLzaXLe07TKXDkqY"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
@@ -334,7 +334,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ Cloud cyberpunk STORE</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/+254112386921"}]]}' 
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/0775366028"}]]}' 
 
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
