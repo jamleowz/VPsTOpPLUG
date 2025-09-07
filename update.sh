@@ -29,14 +29,14 @@ fun_bar() {
     echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
     tput cnorm
 }
-res1() {
-    wget https://raw.githubusercontent.com/jamleowz/VPsTOpPLUG/main/menu.zip
-    unzip menu.zip
-    chmod +x menu/*
-    mv menu/* /usr/local/sbin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf update.sh
+#res1() {
+  #  wget https://raw.githubusercontent.com/amleowz/VPsTOpPLUG/blob/main/ubuntu/menu.zip
+   # unzip menu.zip
+    #chmod +x menu/*
+    #mv menu/* /usr/local/sbin
+    #rm -rf menu
+    #rm -rf menu.zip
+    #rm -rf update.sh
 }
 netfilter-persistent
 clear
