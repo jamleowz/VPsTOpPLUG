@@ -169,19 +169,22 @@ function first_setup(){
     print_success "Directory Xray"
     if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
     echo "Setup Dependencies $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
-    sudo apt update -y
+    apt update -y
     apt-get install --no-install-recommends software-properties-common
     add-apt-repository ppa:vbernat/haproxy-2.8 -y
-    apt-get -y install haproxy=2.0.\*
+    apt-get update
+    apt-get -y install haproxy=2.8.*
 elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
     echo "Setup Dependencies For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
+    apt-get update
+    apt-get install -y curl gpg
     curl https://haproxy.debian.net/bernat.debian.org.gpg |
         gpg --dearmor >/usr/share/keyrings/haproxy.debian.net.gpg
     echo deb "[signed-by=/usr/share/keyrings/haproxy.debian.net.gpg]" \
-        http://haproxy.debian.net buster-backports-1.8 main \
+        http://haproxy.debian.net $(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-2.8 main \
         >/etc/apt/sources.list.d/haproxy.list
-    sudo apt-get update
-    apt-get -y install haproxy=2.8.\*
+    apt-get update
+    apt-get -y install haproxy=2.8.*
 else
     echo -e " Your OS Is Not Supported ($(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g') )"
     exit 1
@@ -407,24 +410,26 @@ rm -rf /etc/vmess/.vmess.db
     }
 #Instal Xray
 function install_xray() {
-clear
-    print_install "Core Xray 1.8.1 Latest Version"
-    domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
+    clear
+    # / / Get latest Xray Core version
+    latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+    print_install "Core Xray $latest_version Latest Version"
+    
+    domainSock_dir="/run/xray"
+    ! [ -d $domainSock_dir ] && mkdir $domainSock_dir
     chown www-data.www-data $domainSock_dir
     
-    # / / Ambil Xray Core Version Terbaru
-latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
+    # Install Xray with latest version
+    bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
  
-    # // Ambil Config Server
+    # // Get Config Server
     wget -O /etc/xray/config.json "${REPO}ubuntu/config.json" >/dev/null 2>&1
     wget -O /etc/systemd/system/runn.service "${REPO}ubuntu/runn.service" >/dev/null 2>&1
-    #chmod +x /usr/local/bin/xray
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
-    print_success "Core Xray 1.8.1 Latest Version"
+    print_success "Core Xray $latest_version Latest Version"
     
-    # Settings UP Nginix Server
+    # Settings UP Nginx Server
     clear
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
@@ -435,7 +440,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
     curl ${REPO}ubuntu/nginx.conf > /etc/nginx/nginx.conf
     
-cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
+    cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 
     # > Set Permission
     chmod +x /etc/systemd/system/runn.service
@@ -461,9 +466,9 @@ LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
-
 EOF
-print_success "Configuration Packet"
+    
+    print_success "Configuration Packet"
 }
 
 function ssh(){
@@ -542,7 +547,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Installing Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/Ghalihx/scupdate/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://raw.githubusercontent.com/jamleowz/VPsTOpPLUG/main/ubuntu/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
@@ -569,12 +574,12 @@ print_success "Limit IP Service"
 function ssh_slow(){
 clear
 # // Installing UDP Mini
-print_install "Installing the SlowDNS Server module"
-    wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
-    chmod +x /tmp/nameserver
-    bash /tmp/nameserver | tee /root/install.log
- print_success "SlowDNS"
-}
+#print_install "Installing the SlowDNS Server module"
+ #   wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
+  #  chmod +x /tmp/nameserver
+   # bash /tmp/nameserver | tee /root/install.log
+ #print_success "SlowDNS"
+#}
 
 clear
 function ins_SSHD(){
@@ -635,36 +640,36 @@ print_success "OpenVPN"
 }
 
 function ins_backup(){
-clear
-print_install "Installing Backup Server"
+#clear
+#print_install "Installing Backup Server"
 #BackupOption
-apt install rclone -y
-printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${REPO}ubuntu/rclone.conf"
+#apt install rclone -y
+#printf "q\n" | rclone config
+#wget -O /root/.config/rclone/rclone.conf "${REPO}ubuntu/rclone.conf"
 #Install Wondershaper
-cd /bin
-git clone  https://github.com/magnific0/wondershaper.git
-cd wondershaper
-sudo make install
-cd
-rm -rf wondershaper
-echo > /home/limit
+#cd /bin
+#git clone  https://github.com/magnific0/wondershaper.git
+#cd wondershaper
+#sudo make install
+#cd
+#rm -rf wondershaper
+#echo > /home/limit
 apt install msmtp-mta ca-certificates bsd-mailx -y
-cat<<EOF>>/etc/msmtprc
-defaults
-tls on
-tls_starttls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
+#cat<<EOF>>/etc/msmtprc
+#defaults
+#tls on
+#tls_starttls on
+#tls_trust_file /etc/ssl/certs/ca-certificates.crt
 
-account default
-host smtp.gmail.com
-port 587
-auth on
-user oceantestdigital@gmail.com
-from oceantestdigital@gmail.com
-password jokerman77 
-logfile ~/.msmtp.log
-EOF
+#account default
+#host smtp.gmail.com
+#port 587
+#auth on
+#user oceantestdigital@gmail.com
+#from oceantestdigital@gmail.com
+#password jokerman77 
+#logfile ~/.msmtp.log
+#EOF
 chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}ubuntu/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
@@ -699,19 +704,23 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
 function ins_Fail2ban(){
 clear
 print_install "Installing Fail2ban"
-#apt -y install fail2ban > /dev/null 2>&1
-#sudo systemctl enable --now fail2ban
-#/etc/init.d/fail2ban restart
-#/etc/init.d/fail2ban status
+apt -y install fail2ban > /dev/null 2>&1
+sudo systemctl enable --now fail2ban
+/etc/init.d/fail2ban restart
+/etc/init.d/fail2ban status
 
-# Instal DDOS Flate
+# Install DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
-	echo; echo; echo "Please un-install the previous version first"
-	exit 0
+    echo
+    echo "Please uninstall the previous version first"
+    exit 1
 else
-	mkdir /usr/local/ddos
+    mkdir -p /usr/local/ddos || {
+        echo "Failed to create directory /usr/local/ddos"
+        exit 1
+    }
+    echo "Created DDOS Flate directory"
 fi
-
 clear
 # banner
 echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
