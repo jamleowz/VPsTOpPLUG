@@ -1,4 +1,3 @@
-sudo tee /etc/xray/config.json > /dev/null <<'EOF'
 {
   "log": {
     "loglevel": "error"
@@ -171,4 +170,3 @@ sudo tee /etc/xray/config.json > /dev/null <<'EOF'
     }
   ]
 }
-EOF
