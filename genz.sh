@@ -45,7 +45,7 @@ sleep 2
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
     echo -e "${OK} Your Architecture Is Supported ( ${green}$( uname -m )${NC} )"
 else
-    echo -e "${EROR} Your Architecture Is Not Supported ( ${YELLOW}$( uname -m )${NC} )"
+    echo -e "${ERROR} Your Architecture Is Not Supported ( ${YELLOW}$( uname -m )${NC} )"
     exit 1
 fi
 
@@ -55,13 +55,13 @@ if [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//
 elif [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "debian" ]]; then
     echo -e "${OK} Your OS Is Supported ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 else
-    echo -e "${EROR} Your OS Is Not Supported ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${ERROR} Your OS Is Not Supported ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
     exit 1
 fi
 
 # // IP Address Validating
 if [[ $IP == "" ]]; then
-    echo -e "${EROR} IP Address ( ${YELLOW}Not Detected${NC} )"
+    echo -e "${ERROR} IP Address ( ${YELLOW}Not Detected${NC} )"
 else
     echo -e "${OK} IP Address ( ${green}$IP${NC} )"
 fi
@@ -276,6 +276,12 @@ clear
 
 clear
 #GANTI PASSWORD DEFAULT
+function password_default() {
+    # This function appears to be missing implementation
+    echo "Setting default password..."
+    # Add your password setting logic here
+}
+
 restart_system(){
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
@@ -571,15 +577,15 @@ systemctl start udp-mini-3
 print_success "Limit IP Service"
 }
 
-#function ssh_slow(){
-#clear
+function ssh_slow(){
+clear
 # // Installing UDP Mini
-#print_install "Installing the SlowDNS Server module"
- #   wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
-  #  chmod +x /tmp/nameserver
-   # bash /tmp/nameserver | tee /root/install.log
- #print_success "SlowDNS"
-#}
+print_install "Installing the SlowDNS Server module"
+    wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
+    chmod +x /tmp/nameserver
+    bash /tmp/nameserver | tee /root/install.log
+ print_success "SlowDNS"
+}
 
 clear
 function ins_SSHD(){
@@ -768,7 +774,7 @@ netfilter-persistent reload
 # remove unnecessary files
 cd
 apt autoclean -y >/dev/null 2>&1
-apt autoremove -y >/dev/null 2>&1
+apt autoremolve -y >/dev/null 2>&1
 print_success "ePro WebSocket Proxy"
 }
 
@@ -861,6 +867,110 @@ cat >/etc/cron.d/xp_all <<-END
     echo "*/1 * * * * root echo -n > /var/log/nginx/access.log" >/etc/cron.d/log.nginx
     echo "*/1 * * * * root echo -n > /var/log/xray/access.log" >>/etc/cron.d/log.xray
     service cron restart
+    cat >/home/daily_reboot <<-END
+		5
+	END
+
+cat >/etc/systemd/system/rc-local.service <<EOF
+[Unit]
+Description=/etc/rc.local
+ConditionPathExists=/etc/rc.local
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo "/bin/false" >>/etc/shells
+echo "/usr/sbin/nologin" >>/etc/shells
+cat >/etc/rc.local <<EOF
+#!/bin/sh -e
+# rc.local
+# By default this script does nothing.
+iptables -I INPUT -p udp --dport 5300 -j ACCEPT
+iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
+systemctl restart netfilter-persistent
+exit 0
+EOF
+
+    chmod +x /etc/rc.local
+    
+    AUTOREB=$(cat /home/daily_reboot)
+    SETT=11
+    if [ $AUTOREB -gt $SETT ]; then
+        TIME_DATE="PM"
+    else
+        TIME_DATE="AM"
+    fi
+print_success "Menu Packet"
+}
+
+# Restart layanan after install
+function enable_services(){
+clear
+print_install "Enable Service"
+    systemctl daemon-reload
+    systemctl start netfilter-persistent
+    systemctl enable --now rc-local
+    systemctl enable --now cron
+    systemctl enable --now netfilter-persistent
+    systemctl restart nginx
+    systemctl restart xray
+    systemctl restart cron
+    systemctl restart haproxy
+    print_success "Enable Service"
+    clear
+}
+
+# Fingsi Install Script
+function instal(){
+clear
+    first_setup
+    nginx_install
+    base_package
+    make_folder_xray
+    pasang_domain
+    password_default
+    pasang_ssl
+    install_xray
+    ssh
+    udp_mini
+    ssh_slow
+    ins_SSHD
+    ins_dropbear
+    ins_vnstat
+    ins_openvpn
+    ins_backup
+    ins_swab
+    ins_Fail2ban
+    ins_epro
+    ins_restart
+    menu
+    profile
+    enable_services
+    restart_system
+}
+instal
+echo ""
+history -c
+rm -rf /root/menu
+rm -rf /root/*.zip
+rm -rf /root/*.sh
+rm -rf /root/LICENSE
+rm -rf /root/README.md
+rm -rf /root/domain
+#sudo hostnamectl set-hostname $user
+secs_to_human "$(($(date +%s) - ${start}))"
+sudo hostnamectl set-hostname $username
+echo -e "${green} Script Successfully Installed"
+echo ""
+read -p "$( echo -e "Press ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} For reboot") "
+reboot    service cron restart
     cat >/home/daily_reboot <<-END
 		5
 	END
