@@ -571,8 +571,8 @@ systemctl start udp-mini-3
 print_success "Limit IP Service"
 }
 
-function ssh_slow(){
-clear
+#function ssh_slow(){
+#clear
 # // Installing UDP Mini
 #print_install "Installing the SlowDNS Server module"
  #   wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
