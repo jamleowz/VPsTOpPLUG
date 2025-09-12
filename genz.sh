@@ -1,12 +1,12 @@
 #!/bin/bash
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # System Request : Debian 9+/Ubuntu 18.04+/20+
-# Develovers » 🗽🥷🎮🧑‍💻🔫Cyberpunk🥷🧑‍💻🗽dexanunz
-# Email      » tuffgamer65@gmail.com
-# telegram   » https://t.me/dexanunz
-# whatsapp   » wa.me/0775366028
+# Develovers » 🗽🥷🎮🧑‍💻🔫TECH PHOENIX🥷🧑‍💻🗽XENON
+# Email      » xenonmghosi@gmail.com
+# telegram   » https://t.me/xenonlo
+# whatsapp   » wa.me/++254705470210
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 🧑‍💻🏴‍☠️🥷🗽 dexanunz script 🧑‍💻🏴‍☠️🥷🗽
+# 🧑‍💻🏴‍☠️🥷🗽 xenonlo script 🧑‍💻🏴‍☠️🥷🗽
 
 Green="\e[92;1m"
 RED="\033[31m"
@@ -33,9 +33,9 @@ clear;clear;clear
 
   # // Banner
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "  Script : ${GRAY} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 ☁️☁️🔫☁️♾️🗽🥸🥷🧑‍💻🏴‍☠️🧑‍💻☁️☁️☁️☁️dexanunz INFINITE 𝐒𝐓𝐎𝐑𝐄 ${NC}"
-echo -e "  Author : ${RED}⛷️🏄🏂🖥️🐼☣️⛽🛸🧑‍💻🏴‍☠️🥷🥸🗽♾️🔫🎮☁️☁️ Cyberpunkdexanunz ${NC}${YELLOW}${NC}"
-echo -e "  ©2024  : ${BLUE} VVIP☁️🎮🔫♾️🗽🥸🥷🏴‍☠️🧑‍💻🏂🏄⛷️☣️🐼⌨️💻🪩🌐🌊 𝐄𝐃𝐈𝐓𝐈𝐎𝐍 ${NC}"
+echo -e "  Script : ${RED} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 🔫☁️🏴‍☠🧑‍💻☁XENON INFINITE 𝐒𝐓𝐎𝐑𝐄 ${NC}"
+echo -e "  Author : ${RED}⛷️🏄🏂🖥️🐼☣️⛽🏴‍☠️🥷🥸🗽🔫🎮☁️☁️ XENON ${NC}${YELLOW}${NC}"
+echo -e "  ©2024  : ${BLUE} VVIP☁️🎮🔫♾️🗽🥸🥷🏴‍☠️🏄⛷️☣️🐼⌨️💻🪩🌐🌊 𝐄𝐃𝐈𝐓𝐈𝐎𝐍 ${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 sleep 2
@@ -45,7 +45,7 @@ sleep 2
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
     echo -e "${OK} Your Architecture Is Supported ( ${green}$( uname -m )${NC} )"
 else
-    echo -e "${ERROR} Your Architecture Is Not Supported ( ${YELLOW}$( uname -m )${NC} )"
+    echo -e "${EROR} Your Architecture Is Not Supported ( ${YELLOW}$( uname -m )${NC} )"
     exit 1
 fi
 
@@ -55,13 +55,13 @@ if [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//
 elif [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "debian" ]]; then
     echo -e "${OK} Your OS Is Supported ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 else
-    echo -e "${ERROR} Your OS Is Not Supported ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${EROR} Your OS Is Not Supported ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
     exit 1
 fi
 
 # // IP Address Validating
 if [[ $IP == "" ]]; then
-    echo -e "${ERROR} IP Address ( ${YELLOW}Not Detected${NC} )"
+    echo -e "${EROR} IP Address ( ${YELLOW}Not Detected${NC} )"
 else
     echo -e "${OK} IP Address ( ${green}$IP${NC} )"
 fi
@@ -91,7 +91,7 @@ gem install lolcat
 apt install wondershaper -y
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/jamleowz/VPsTOpPLUG/main/"
+    REPO="https://raw.githubusercontent.com/jamleowz/main/"
 
 ####
 start=$(date +%s)
@@ -276,12 +276,6 @@ clear
 
 clear
 #GANTI PASSWORD DEFAULT
-function password_default() {
-    # This function appears to be missing implementation
-    echo "Setting default password..."
-    # Add your password setting logic here
-}
-
 restart_system(){
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
@@ -325,12 +319,12 @@ sts="${Error}"
 fi
 TIMES="10"
 CHATID="1766050144"
-KEY="7881208783:AAHbTd8GwARTBt_1HzsRLzaXLe07TKXDkqY"
+KEY="7881208783:AAHbTd8GwARTBt_1HzsRLzaXLe07TKXDkq"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ Cloud cyberpunk STORE</b>
+<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ XENON STORE</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <code>User     :</code><code>$username</code>
 <code>Domain   :</code><code>$domain</code>
@@ -340,7 +334,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ Cloud cyberpunk STORE</b>
+<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ XENON STORE</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <i>Automatic Notifications From Github</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/0775366028"}]]}' 
@@ -410,7 +404,7 @@ rm -rf /etc/vmess/.vmess.db
     echo "& plughin Account" >>/etc/vmess/.vmess.db
     echo "& plughin Account" >>/etc/vless/.vless.db
     echo "& plughin Account" >>/etc/trojan/.trojan.db
-    echo "& plughin Account" >>/etc/shodowsocks/.shadowsocks.db
+    echo "& plughin Account" >>/etc/shadowsocks/.shadowsocks.db
     echo "& plughin Account" >>/etc/ssh/.ssh.db
     echo "echo -e 'Vps Config User Account'" >> /etc/user-create/user.log
     }
@@ -476,6 +470,7 @@ EOF
     
     print_success "Configuration Packet"
 }
+
 
 function ssh(){
 clear
@@ -543,7 +538,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
 # set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+ln -fs /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -648,11 +643,11 @@ print_success "OpenVPN"
 function ins_backup(){
 #clear
 #print_install "Installing Backup Server"
-#BackupOption
+##BackupOption
 #apt install rclone -y
 #printf "q\n" | rclone config
 #wget -O /root/.config/rclone/rclone.conf "${REPO}ubuntu/rclone.conf"
-#Install Wondershaper
+##Install Wondershaper
 #cd /bin
 #git clone  https://github.com/magnific0/wondershaper.git
 #cd wondershaper
@@ -661,11 +656,11 @@ function ins_backup(){
 #rm -rf wondershaper
 #echo > /home/limit
 apt install msmtp-mta ca-certificates bsd-mailx -y
-#cat<<EOF>>/etc/msmtprc
-#defaults
-#tls on
-#tls_starttls on
-#tls_trust_file /etc/ssl/certs/ca-certificates.crt
+cat<<EOF>>/etc/msmtprc
+defaults
+tls on
+tls_starttls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
 
 #account default
 #host smtp.gmail.com
@@ -675,7 +670,7 @@ apt install msmtp-mta ca-certificates bsd-mailx -y
 #from oceantestdigital@gmail.com
 #password jokerman77 
 #logfile ~/.msmtp.log
-#EOF
+EOF
 chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}ubuntu/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
@@ -703,7 +698,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    wget ${REPO}ubuntu/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+    #wget ${REPO}ubuntu/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
     print_success "Swap 1 G"
 }
 
@@ -715,18 +710,14 @@ sudo systemctl enable --now fail2ban
 /etc/init.d/fail2ban restart
 /etc/init.d/fail2ban status
 
-# Install DDOS Flate
+# Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
-    echo
-    echo "Please uninstall the previous version first"
-    exit 1
+	echo; echo; echo "Please un-install the previous version first"
+	exit 0
 else
-    mkdir -p /usr/local/ddos || {
-        echo "Failed to create directory /usr/local/ddos"
-        exit 1
-    }
-    echo "Created DDOS Flate directory"
+	mkdir /usr/local/ddos
 fi
+
 clear
 # banner
 echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
@@ -753,8 +744,8 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}ubuntu/ftvpn" >/dev/null 2>&1
-chmod +x /usr/sbin/ftvpn
+#wget -O /usr/sbin/ftvpn "${REPO}ubuntu/ftvpn" >/dev/null 2>&1
+#chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -886,7 +877,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 EOF
 
-echo "/bin.false" >>/etc/shells
+echo "/bin/false" >>/etc/shells
 echo "/usr/sbin/nologin" >>/etc/shells
 cat >/etc/rc.local <<EOF
 #!/bin/sh -e
@@ -967,7 +958,7 @@ rm -rf /root/domain
 #sudo hostnamectl set-hostname $user
 secs_to_human "$(($(date +%s) - ${start}))"
 sudo hostnamectl set-hostname $username
-echo -e "${green} Script Successfully Installed"
+echo -e "${green} Script Successfull Installed"
 echo ""
 read -p "$( echo -e "Press ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} For reboot") "
 reboot
