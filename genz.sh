@@ -1,12 +1,12 @@
 #!/bin/bash
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # System Request : Debian 9+/Ubuntu 18.04+/20+
-# Develovers » 🗽🥷🎮🧑‍💻🔫TECH PHOENIX🥷🧑‍💻🗽XENON
-# Email      » xenonmghosi@gmail.com
-# telegram   » https://t.me/xenonlo
-# whatsapp   » wa.me/++254705470210
+# Develovers » 🗽🥷🎮🧑‍💻🔫Cyberpunk🥷🧑‍💻🗽dexanunz
+# Email      » tuffgamer65@gmail.com
+# telegram   » https://t.me/dexanunz
+# whatsapp   » wa.me/0775366028
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 🧑‍💻🏴‍☠️🥷🗽 xenonlo script 🧑‍💻🏴‍☠️🥷🗽
+# 🧑‍💻🏴‍☠️🥷🗽 dexanunz script 🧑‍💻🏴‍☠️🥷🗽
 
 Green="\e[92;1m"
 RED="\033[31m"
@@ -33,9 +33,9 @@ clear;clear;clear
 
   # // Banner
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "  Script : ${RED} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 🔫☁️🏴‍☠🧑‍💻☁XENON INFINITE 𝐒𝐓𝐎𝐑𝐄 ${NC}"
-echo -e "  Author : ${RED}⛷️🏄🏂🖥️🐼☣️⛽🏴‍☠️🥷🥸🗽🔫🎮☁️☁️ XENON ${NC}${YELLOW}${NC}"
-echo -e "  ©2024  : ${BLUE} VVIP☁️🎮🔫♾️🗽🥸🥷🏴‍☠️🏄⛷️☣️🐼⌨️💻🪩🌐🌊 𝐄𝐃𝐈𝐓𝐈𝐎𝐍 ${NC}"
+echo -e "  Script : ${GRAY} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 ☁️☁️🔫☁️♾️🗽🥸🥷🧑‍💻🏴‍☠️🧑‍💻☁️☁️☁️☁️dexanunz INFINITE 𝐒𝐓𝐎𝐑𝐄 ${NC}"
+echo -e "  Author : ${RED}⛷️🏄🏂🖥️🐼☣️⛽🛸🧑‍💻🏴‍☠️🥷🥸🗽♾️🔫🎮☁️☁️ Cyberpunkdexanunz ${NC}${YELLOW}${NC}"
+echo -e "  ©2024  : ${BLUE} VVIP☁️🎮🔫♾️🗽🥸🥷🏴‍☠️🧑‍💻🏂🏄⛷️☣️🐼⌨️💻🪩🌐🌊 𝐄𝐃𝐈𝐓𝐈𝐎𝐍 ${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 sleep 2
@@ -91,7 +91,7 @@ gem install lolcat
 apt install wondershaper -y
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/jamleowz/main/"
+    REPO="https://raw.githubusercontent.com/jamleowz/VPsTOpPLUG/main/"
 
 ####
 start=$(date +%s)
@@ -161,7 +161,7 @@ print_install "Create xray directory"
     export Arch=$( uname -m )
     export IP=$( curl -s https://ipinfo.io/ip/ )
 
-# Change Environment System
+nge Environment System
 function first_setup(){
     timedatectl set-timezone Asia/Jakarta
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
@@ -190,6 +190,7 @@ else
     exit 1
 fi
 }
+
 
 # GEO PROJECT
 clear
@@ -319,12 +320,12 @@ sts="${Error}"
 fi
 TIMES="10"
 CHATID="1766050144"
-KEY="7881208783:AAHbTd8GwARTBt_1HzsRLzaXLe07TKXDkq"
+KEY="7881208783:AAHbTd8GwARTBt_1HzsRLzaXLe07TKXDkqY"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ XENON STORE</b>
+<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ Cloud cyberpunk STORE</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <code>User     :</code><code>$username</code>
 <code>Domain   :</code><code>$domain</code>
@@ -334,7 +335,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ XENON STORE</b>
+<b>WELCOME TO ⛷️🏄☣️🐼🗽♾️🔫🎮🗽🥸🥷🏴‍☠️🧑‍💻🏂☁️☁️☁️☁️🛸🛸🛸🛸🛸🛸🛸🛸🛸☁️☁️☁️☁️☁️🛸🛸🛸🛸⛽⛽⛽⛽ Cloud cyberpunk STORE</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <i>Automatic Notifications From Github</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/0775366028"}]]}' 
@@ -470,8 +471,6 @@ EOF
     
     print_success "Configuration Packet"
 }
-
-
 function ssh(){
 clear
 print_install "Installing Password SSH"
@@ -538,7 +537,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
 # set time GMT +7
-ln -fs /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -572,15 +571,15 @@ systemctl start udp-mini-3
 print_success "Limit IP Service"
 }
 
-function ssh_slow(){
-clear
+#function ssh_slow(){
+#clear
 # // Installing UDP Mini
-print_install "Installing the SlowDNS Server module"
-    wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
-    chmod +x /tmp/nameserver
-    bash /tmp/nameserver | tee /root/install.log
- print_success "SlowDNS"
-}
+#print_install "Installing the SlowDNS Server module"
+ #   wget -q -O /tmp/nameserver "${REPO}ubuntu/nameserver" >/dev/null 2>&1
+  #  chmod +x /tmp/nameserver
+   # bash /tmp/nameserver | tee /root/install.log
+ #print_success "SlowDNS"
+#}
 
 clear
 function ins_SSHD(){
@@ -643,11 +642,11 @@ print_success "OpenVPN"
 function ins_backup(){
 #clear
 #print_install "Installing Backup Server"
-##BackupOption
+#BackupOption
 #apt install rclone -y
 #printf "q\n" | rclone config
 #wget -O /root/.config/rclone/rclone.conf "${REPO}ubuntu/rclone.conf"
-##Install Wondershaper
+#Install Wondershaper
 #cd /bin
 #git clone  https://github.com/magnific0/wondershaper.git
 #cd wondershaper
@@ -656,11 +655,11 @@ function ins_backup(){
 #rm -rf wondershaper
 #echo > /home/limit
 apt install msmtp-mta ca-certificates bsd-mailx -y
-cat<<EOF>>/etc/msmtprc
-defaults
-tls on
-tls_starttls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
+#cat<<EOF>>/etc/msmtprc
+#defaults
+#tls on
+#tls_starttls on
+#tls_trust_file /etc/ssl/certs/ca-certificates.crt
 
 #account default
 #host smtp.gmail.com
@@ -670,7 +669,7 @@ tls_trust_file /etc/ssl/certs/ca-certificates.crt
 #from oceantestdigital@gmail.com
 #password jokerman77 
 #logfile ~/.msmtp.log
-EOF
+#EOF
 chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}ubuntu/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
@@ -698,7 +697,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    #wget ${REPO}ubuntu/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+    wget ${REPO}ubuntu/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
     print_success "Swap 1 G"
 }
 
@@ -710,14 +709,18 @@ sudo systemctl enable --now fail2ban
 /etc/init.d/fail2ban restart
 /etc/init.d/fail2ban status
 
-# Instal DDOS Flate
+# Install DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
-	echo; echo; echo "Please un-install the previous version first"
-	exit 0
+    echo
+    echo "Please uninstall the previous version first"
+    exit 1
 else
-	mkdir /usr/local/ddos
+    mkdir -p /usr/local/ddos || {
+        echo "Failed to create directory /usr/local/ddos"
+        exit 1
+    }
+    echo "Created DDOS Flate directory"
 fi
-
 clear
 # banner
 echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
@@ -744,8 +747,8 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-#wget -O /usr/sbin/ftvpn "${REPO}ubuntu/ftvpn" >/dev/null 2>&1
-#chmod +x /usr/sbin/ftvpn
+wget -O /usr/sbin/ftvpn "${REPO}ubuntu/ftvpn" >/dev/null 2>&1
+chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
